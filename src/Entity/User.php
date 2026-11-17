@@ -13,8 +13,6 @@ class User
     #[ORM\Column]
     private ?int $id = null;
 
-<<<<<<< HEAD
-=======
     #[ORM\Column(length: 50)]
     private ?string $email = null;
 
@@ -27,13 +25,10 @@ class User
     #[ORM\Column(length: 50)]
     private ?string $lastname = null;
 
->>>>>>> b92a1a053894c4cf172eb138315db26ba0e4664e
     public function getId(): ?int
     {
         return $this->id;
     }
-<<<<<<< HEAD
-=======
 
     public function getEmail(): ?string
     {
@@ -82,5 +77,4 @@ class User
 
         return $this;
     }
->>>>>>> b92a1a053894c4cf172eb138315db26ba0e4664e
 }
