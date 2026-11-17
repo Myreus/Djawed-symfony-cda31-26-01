@@ -18,15 +18,28 @@ class Book
     #[ORM\Column(length: 100)]
     private ?string $title = null;
 
+<<<<<<< HEAD
     #[ORM\Column(length: 500, nullable: true)]
+=======
+    #[ORM\Column(length: 255)]
+>>>>>>> b92a1a053894c4cf172eb138315db26ba0e4664e
     private ?string $resume = null;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $publishAt = null;
 
+<<<<<<< HEAD
     #[ORM\Column(length: 100)]
     private ?string $author = null;
 
+=======
+    #[ORM\Column(length: 50)]
+    private ?string $author = null;
+
+    #[ORM\ManyToOne]
+    private ?User $user = null;
+
+>>>>>>> b92a1a053894c4cf172eb138315db26ba0e4664e
     /**
      * @var Collection<int, Category>
      */
@@ -60,7 +73,11 @@ class Book
         return $this->resume;
     }
 
+<<<<<<< HEAD
     public function setResume(?string $resume): static
+=======
+    public function setResume(string $resume): static
+>>>>>>> b92a1a053894c4cf172eb138315db26ba0e4664e
     {
         $this->resume = $resume;
 
@@ -87,6 +104,18 @@ class Book
     public function setAuthor(string $author): static
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }
